@@ -105,6 +105,7 @@ process.on('SIGTERM', () => shutdown('SIGTERM'));
 process.on('SIGINT', () => shutdown('SIGINT'));
 
 
+// PORT lets verification bind an isolated port without touching a user instance on 8001.
 server.listen({
-  port: 8001,
+  port: Number(process.env.PORT) || 8001,
 });
